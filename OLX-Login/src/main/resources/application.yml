@@ -1,0 +1,25 @@
+server:
+   port: 9000
+spring:
+   datasource:
+      url: jdbc:postgresql://localhost:5432/olx_users
+      driver-class-name: org.postgresql.Driver
+      username: postgres
+      password: postgres
+   jpa:
+      hibernate.ddl-auto: update
+      properties:
+         hibernate:
+            dialect: org.hibernate.dialect.PostgreSQLDialect   application:     name: auth-service
+     
+eureka:  client:
+    register-with-eureka: true
+    fetch-registry: true  instance:    hostname: localhost
+    instance-id: ${spring.application.name}:${random.uuid}     
+    
+#okta:
+#   oauth2:
+#      issuer: https://dev-78154545.okta.com/oauth2/default
+#      clientId: 0oamfa8eyx2ZkpOkX5d6
+#      clientSecret: vMQml6em8FLRNvl-Dh3AAV51OOxBn3YmIKTu2tbk
+      
