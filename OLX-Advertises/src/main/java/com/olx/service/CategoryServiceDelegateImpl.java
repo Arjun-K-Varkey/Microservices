@@ -31,7 +31,7 @@ public class CategoryServiceDelegateImpl implements CategoryServiceDelegate {
 		CircuitBreaker circuitBreaker = circuitBreakerFactory.create("circuitbreaker");
 		List<Map> categories = 
 				circuitBreaker.run(
-						()->this.restTemplate.getForObject("http://localhost:9001/category", List.class),
+						()->this.restTemplate.getForObject("http://MASTERDATA-SERVICE/category", List.class),
 						throwable -> categoryServiceFallback()
 				);
 		return categories;

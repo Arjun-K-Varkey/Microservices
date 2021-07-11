@@ -100,5 +100,10 @@ public class UserController {
 	public List<AdvertiseDTO> getAllAdvertises() {
 		return advertiseServiceDelegate.getAllAdvertises();
 	}
+	
+	@GetMapping(value="/user/advertise/{username}", produces=MediaType.APPLICATION_JSON_VALUE)
+	public List<AdvertiseDTO> getAdvertisesById(@PathVariable("username") String username) {
+		return advertiseServiceDelegate.getAllAdvertisesByUsername(username);
+	}
 
 }
