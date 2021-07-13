@@ -15,8 +15,9 @@ spring:
 eureka:  client:
     register-with-eureka: true
     fetch-registry: true  instance:    hostname: localhost
-    instance-id: ${spring.application.name}:${random.uuid}     
-    
+    instance-id: ${spring.application.name}:${random.uuid}   
+
+management:  endpoints:    web:      exposure:        include: "*"       cors:        allowed-origins: "*"  server:    port: 9090
 #okta:
 #   oauth2:
 #      issuer: https://dev-78154545.okta.com/oauth2/default
